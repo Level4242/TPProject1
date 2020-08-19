@@ -1,0 +1,152 @@
+ /* Copyright (C) 2020 to the present, Crestron Electronics, Inc.
+  * All rights reserved.
+  * No part of this software may be reproduced in any form, machine
+  * or natural, without the express written consent of Crestron Electronics.
+  * Use of this source code is subject to the terms of the Crestron Software License Agreement 
+  * under which you licensed this source code.
+  */
+ // custom header
+ .navbar-default.navbar {
+   @include box-shadow(0 0 15px rgba(0, 0, 0, .85));
+   z-index: $zindex-fixed;
+   flex-wrap: nowrap;
+   height: $header-height;
+
+   .version-info {
+     margin-left: 1rem;
+
+     .ch5-button {
+       display: flex;
+       vertical-align: top;
+       min-width: auto;
+
+       .cb-btn {
+         @include size(100%);
+       }
+
+       i.fa-info {
+         font-size: 12px;
+         padding: 0;
+         @include size(12px);
+       }
+     }
+
+     div.ch5-modal-dialog {
+       border: $version-modal-dialog-border-width $border-type $black;
+
+       .ch5-modal-dialog-contents {
+         padding: 0;
+
+         &>p:last-child {
+           margin-bottom: 0;
+         }
+       }
+
+       .ch5-modal-dialog-close-icon-btn {
+         padding: 0;
+         margin: 0;
+         @include size(auto);
+
+         span.ch5-modal-dialog-close-icon {
+           display: block;
+           font-size: rem-calc(24px);
+         }
+       }
+
+       p {
+         color: $version-modal-dialog-content-color;
+         font-size: rem-calc(20px);
+       }
+
+       p.version-error {
+         color: $red;
+       }
+
+       h4 {
+         color: $black;
+         font-size: rem-calc(32px);
+       }
+     }
+   }
+
+   .dropdown {
+     position: relative;
+     font-size: rem-calc(24px);
+   }
+
+   .navbar-nav {
+     flex-direction: row;
+     justify-content: flex-end;
+
+     &>li>a {
+       font-size: rem-calc(24px);
+       padding-left: $navbar-nav-link-padding-x;
+       padding-right: $navbar-nav-link-padding-x;
+       line-height: 1;
+     }
+   }
+
+   .form-inline {
+     width: 50%;
+
+     .btn-link {
+       padding: 0.5rem;
+       @include transition(color 0.5s linear);
+
+       &+.btn-link {
+         margin-left: 1rem;
+       }
+
+       &:hover {
+         opacity: 0.5;
+       }
+
+       &.active {
+         opacity: 1;
+       }
+     }
+   }
+
+   .navbar-action-right {
+     display: flex;
+     flex-wrap: nowrap;
+     width: 50%;
+     align-items: center;
+     justify-content: flex-end;
+   }
+
+   @include media-breakpoint-down(sm) {
+     height: $header-height-sm;
+     padding-left: $mobile-gutter-space;
+     padding-right: $mobile-gutter-space;
+
+     .form-inline .btn-link+.btn-link {
+       margin-left: $mobile-gutter-space;
+     }
+
+     .navbar-brand {
+       padding: 0;
+       display: flex;
+     }
+
+     .dropdown {
+       text-align: right;
+
+       .navbar-nav {
+         position: absolute;
+         top: 100%;
+         right: 0;
+         left: auto;
+       }
+
+       .btn-link {
+         padding: $mobile-gutter-space;
+         text-decoration: none;
+
+         &.open+.navbar-nav {
+           display: block !important;
+         }
+       }
+     }
+   }
+ }

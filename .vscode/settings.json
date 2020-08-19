@@ -1,0 +1,5 @@
+{
+    "html.validate.scripts": false,
+    "npm.packageManager": "yarn",
+    "npm.enableScriptExplorer": true
+}

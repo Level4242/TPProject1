@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "Crestron CH5 || HTML 5 UI Development Showcase",
+    "ch5modal": {
+      "name": "CH5 Version"
+    },
+    "ch5logger": {
+      "title": "REMOTE LOGGER SETTINGS",
+      "form": {
+        "ipaddress": "IP Address / Hostname",
+        "portnumber": "Port Number",
+        "set": "SET",
+        "reset": "RESET",
+        "error": {
+          "ipaddress": "Please enter valid IP Address/Hostname",
+          "portnumber": "Please enter valid Port Number"
+        }
+      },
+      "note": "Note:",
+      "note1": "You need to add attribute 'debug' to CH5 tag.",
+      "note2": "The values will be stored only for this session."
+    }
+  },
+  "page": {
+    "title": "Page"
+  },
+  "swiperSlides": [{
+      "thumbTitle": "Page1"
+    },
+    {
+      "thumbTitle": "Page2"
+    },
+    {
+      "thumbTitle": "Page3"
+    },
+    {
+      "thumbTitle": "Page4"
+    }
+  ],
+
+  "lang": "English"
+}

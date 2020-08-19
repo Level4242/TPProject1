@@ -1,0 +1,35 @@
+
+Usage: yarn generate:component [options]
+
+Options:
+    -h, --help          Help for Generate Documentation
+    -n, --name          Set the Name of the compoenent to be created
+
+You could use Yarn / NPM to generate components. The following are the commands:
+    yarn generate:component
+    npm run generate:component
+
+You could use shortcuts as the following:
+    yarn gen:c
+    npm run gen:c
+
+You could use Yarn / NPM to generate components. The following are the commands:
+    yarn gen:c --name=buttons
+    yarn gen:c -n=buttons
+    npm run gen:c --  --name=buttons
+    npm run gen:c --  -n=buttons
+
+The Component Name is mandatory to create a component. It must start with a letter and can contain letters, hyphens, spaces, underscores and numbers. 
+
+Based on the input for component name, the below will be the generated components and file/folder names:
+
+| No | Input Component Name | Generated Component Name  | Generated File and Folder Names |
+| -- | -------------------- | ------------------------- | ------------------------------- |
+| 01 | LEDLights            | ledlights                 | ledlights                       |
+| 02 | ledlights            | ledlights                 | ledlights                       |
+| 03 | LEDLIGHTS            | ledlights                 | ledlights                       |
+| 04 | LED-Lights           | ledLights                 | led-lights                      |
+| 05 | LED_Lights           | ledLights                 | led-lights                      |
+| 06 | led-lights           | ledLights                 | led-lights                      |
+| 07 | led_lights           | ledLights                 | led-lights                      |
+| 08 | led lights           | ledLights                 | led-lights                      |

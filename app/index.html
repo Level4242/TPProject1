@@ -1,0 +1,101 @@
+<!-- 
+    Copyright (C) 2020 to the present, Crestron Electronics, Inc.
+    All rights reserved.
+    No part of this software may be reproduced in any form, machine
+    or natural, without the express written consent of Crestron Electronics.
+    Use of this source code is subject to the terms of the Crestron Software License Agreement 
+    under which you licensed this source code.  
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title data-ch5-i18n="-+app.title+-"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- inject:css -->
+    <link rel="stylesheet" href="./assets/css/external.css">
+    <link rel="stylesheet" href="./assets/css/light-theme.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <!-- endinject -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="loader" class="loader"></div>
+    <section class="main-section">
+        <!-- Header start -->
+        <nav class="navbar navbar-dark navbar-default fixed-top">
+            <a class="navbar-brand">
+                <img id="brandLogo" class="brand-logo" onclick="remoteLoggerSettingsModule.showLoggerPopUp();" />
+            </a>
+            <div class="navbar-action-right">
+                <ch5-import-htmlsnippet class="version-info-page" url="./components/version-info/version-info.html">
+                </ch5-import-htmlsnippet>
+            </div>
+        </nav>
+        <!-- Header end -->
+        <ch5-background receivestateurl="common_background_url" url="./assets/img/ch5-stone-light-bg.jpg">
+        </ch5-background>
+        <ch5-triggerview class="triggerview" gestureable="true" disableanimation="true" endless="false">
+            <!-- Page1 start -->
+            <ch5-triggerview-child>
+                <ch5-import-htmlsnippet id="page1-page" url="./components/page1/page1.html"></ch5-import-htmlsnippet>
+            </ch5-triggerview-child>
+            <!-- Page1 end -->
+
+            <!-- Page2 start -->
+            <ch5-triggerview-child>
+                <ch5-import-htmlsnippet id="page2-page" url="./components/page2/page2.html"></ch5-import-htmlsnippet>
+            </ch5-triggerview-child>
+            <!-- Page2 end -->
+
+            <!-- Page3 start -->
+            <ch5-triggerview-child>
+                <ch5-import-htmlsnippet id="page3-page" url="./components/page3/page3.html"></ch5-import-htmlsnippet>
+            </ch5-triggerview-child>
+            <!-- Page3 end -->
+
+            <!-- Page4 start -->
+            <ch5-triggerview-child>
+                <ch5-import-htmlsnippet id="page4-page" url="./components/page4/page4.html"></ch5-import-htmlsnippet>
+            </ch5-triggerview-child>
+            <!-- Page4 end -->
+
+        </ch5-triggerview>
+
+        <!-- Page Template -->
+        <ch5-import-htmlsnippet id="pagedisplay-page" url="./components/pagedisplay/pagedisplay.html"
+            noshowtype="display">
+        </ch5-import-htmlsnippet>
+
+        <ch5-list class="swiper-thumb" orientation="horizontal" maxHeight="auto" indexId="idx" itemHeight="100%"
+            receiveStateSize="nav.items.size">
+            <template>
+                <div class="horizontal-list-item">
+                    <ch5-button customClass="thumb-btn-{{idx}}" type="text"
+                        shape="rectangle" receiveStateSelected="active_state_class_{{idx}}"
+                        receiveStateLabel="nav_label_{{idx}}" iconurl="./assets/img/navigation/nav_icon_{{idx}}.svg"
+                        iconPosition="bottom" onclick="appModule.navMenu({{idx}})"></ch5-button>
+                </div>
+            </template>
+        </ch5-list>
+        <a class="thumb-action" onclick="appModule.openThumbNav()" id="floatingArrow"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 12 24">
+                <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z" /></svg></a>
+
+    </section>
+    <!-- inject:js -->
+    <ch5-import-htmlsnippet url="./components/remote-logger-settings/remote-logger-settings.html">
+    </ch5-import-htmlsnippet>
+
+    <script src="./libraries/cr-com-lib.js"></script>
+    <script src="./libraries/component.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>

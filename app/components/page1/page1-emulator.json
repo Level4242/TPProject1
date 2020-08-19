@@ -1,0 +1,11 @@
+
+{
+ "cues":
+ [
+   { "type": "boolean", "event": 120, "trigger": true, "actions": [ {  "type": "boolean","state": "120", "logic": "toggle"} ]                                    }  
+ ],     
+"onStart": [ 
+    {"state": "120", "type": "boolean", "value": true},
+    {"state": "100", "type": "string", "value": "Atrium"}
+]
+}
